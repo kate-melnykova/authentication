@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block form %}
+<h2> Posts of {{username}} </h2>
+{% for post in posts %}
+    <fieldset>
+        <p style="font-size:160%;"><b>{{post.title}}</b></p>
+        <p style="font-size:80%;">
+            <i><a href="/profile?username={{post.author}}">{{post.author}}</a></i>
+        </p>
+        <p> {{post.content}} </p>
+        <p style="font-size: small;">{{post.date}}</p>
+    </fieldset>
+    <br>
+{% endfor %}
+{% endblock %}

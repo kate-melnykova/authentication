@@ -1,0 +1,84 @@
+body{
+    background-color: #336600;
+}
+
+div {
+  background-color: #ffffff;
+  max-width: 80%;
+  margin: auto;
+}
+
+.topnav {
+  width: 100%;
+  background-color: #1a1a00;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #333300;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #333300;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+
+table{
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.content {
+
+}
+
+.item{
+  display: block;
+  margin: 5px;
+}
+
+form textarea#content {
+     width: 80%;
+     height: 300px;
+     max-width: 800px;
+}
+
+.fieldset {
+  width: 80%;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}

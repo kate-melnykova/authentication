@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block form %}
+<h1>My info </h1>
+<div>
+    <p> Username: {{user.username}}</p>
+    <p> First name: {{user.first_name}}</p>
+    <p> Date of birth:
+        {% if user.dob == '' or user.dob is none %}
+            N/A
+        {% else %}
+            {{user.dob.strftime('%x')}}
+        {% endif %}
+    </p>
+    <p> Registered since: {{user.date.strftime('%x')}} </p>
+    <p> Total number of posts: {{ posts|length }}</p>
+    <p> Total number of likes: {{ user.likes }}</p>
+    <form action="./update_user">
+        <input type="submit" name="update" value="Update">
+    </form>
+</div>
+<h1> My posts </h1>
+    <table style="width: 100%">
+    <tr>
+        <td></td>
+        <td style="width: 10%"> Sort by</td>
+        <td style="width: 10%">
+            <a href="/account?sort=date"> date </a>
+        </td>
+        <td style="width: 10%">
+            <a href="/account?sort=popular"> most popular</a>
+        </td>
+    </tr>
+    </table>
+{% for post, likes, user_like in posts %}
+    {% include '_post.html' %}
+{% endfor %}
+<p><a href="/blogpost_edit">Create a new post</a></p>
+{% endblock %}
