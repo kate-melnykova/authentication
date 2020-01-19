@@ -60,10 +60,3 @@ class UpdateUserForm(FormwAttributes):
             if isinstance(v, Field):
                 attrs.append(k)
         return attrs
-
-
-class BlogForm(FormwAttributes):
-    title = StringField('Title', [validators.Length(min=1, max=255)],
-                        filters=[strip_filter])
-    content = TextAreaField('Content', filters=[strip_filter])
-    id = None

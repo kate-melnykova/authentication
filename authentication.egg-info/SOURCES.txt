@@ -1,6 +1,5 @@
 setup.py
 authentication/__init__.py
-authentication/hello_world.py
 authentication.egg-info/PKG-INFO
 authentication.egg-info/SOURCES.txt
 authentication.egg-info/dependency_links.txt

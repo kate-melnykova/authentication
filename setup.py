@@ -4,7 +4,7 @@ setup(
     name='authentication',
     version='1.0',
     packages=['authentication'],
-    install_requires=['Flask == 1.1', 'pycryptodome', 'wtforms'],
+    install_requires=['Flask == 1.1', 'pycryptodome', 'wtforms', 'passlib'],
     url='',
     license='MIT',
     author='katyandrey',

@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de938152-6048-448c-9b01-d06052f9373d" name="Default Changelist" comment="" />
+    <list default="true" id="de938152-6048-448c-9b01-d06052f9373d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/authentication.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/hello_world.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/static/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/static/like.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/static/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/static/unlike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/401.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/403.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/_post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/blogpost_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/blogpost_recent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/hello_world.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/welcome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/views/wtforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views/wtforms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +41,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VuxpLdojePtO5v6EjZfY7vshT1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,8 +52,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packaging" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -78,6 +109,19 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="authentication" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="authentication" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,19 +142,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="authentication" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -190,6 +221,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="656" y="250" key="FileChooserDialogImpl" timestamp="1578874897383">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="656" y="250" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1578874897383" />
+    <state x="291" y="175" key="SettingsEditor" timestamp="1579405726733">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="291" y="175" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1579405726733" />
     <state x="473" y="136" width="1272" height="944" key="find.popup" timestamp="1578119205339">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
