@@ -2,30 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de938152-6048-448c-9b01-d06052f9373d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/authentication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/templates/logout_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/templates/registration_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication/templates/update_user_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/authentication.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/authentication.egg-info/requires.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/hello_world.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/static/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/static/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/static/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/static/unlike.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/401.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/403.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/_post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/blogpost_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/blogpost_recent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/hello_world.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/templates/welcome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/views/wtforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views/wtforms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/templates/login_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/templates/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/authentication/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/authentication/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/authentication-1.0-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/dist/authentication-1.0-py3-none-any.whl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/authentication-1.0.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/dist/authentication-1.0.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +28,7 @@
       <list>
         <option value="Setup Script" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,6 +42,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -229,6 +221,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="291" y="175" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1579405726733" />
+    <state x="437" y="79" width="1046" height="946" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579476876925">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="437" y="79" width="1046" height="946" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1579476876925" />
     <state x="473" y="136" width="1272" height="944" key="find.popup" timestamp="1578119205339">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>

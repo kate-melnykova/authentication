@@ -3,10 +3,6 @@
 {% block form %}
     <h1> Logout </h1>
     <fieldset style="width:80%; table-layout: fixed; margin-left: auto; margin-right: auto">
-    <form action="./logout/confirmed" method="POST">
-        <p style="text-align: center;">Are you sure that you want to log out?</p>
-        <p style="text-align: center;"><input type="submit" name="submit" value="Yes"></p>
-    </form>
-
+        {% include 'logout_form.html' %}
     </fieldset>
 {% endblock %}
