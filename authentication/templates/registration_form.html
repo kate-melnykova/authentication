@@ -6,73 +6,73 @@
             <tr>
                 <td style="width: 20%"> {{ regform.username.label }}* </td>
                 <td style="width: 40%"> {{ regform.username(class="css_class") }}</td>
-                <td style="width: 40%">
-                    <span style="color:tomato; font-size:80%">
-                        {% for entry in regform.username.saved_error %}
-                            {{entry}}{{", " if not loop.last}}
+                <td> {% if regform.username.errors %}
+                    <ul class="errors">
+                        {% for error in regform.username.errors %}
+                            <li>{{ error }}</li>
                         {% endfor %}
-                    </span>
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>{{ regform.password.label }}*</td>
                 <td>{{ regform.password(class="css_class") }}</td>
-                <td>
-                    <span style="color:tomato; font-size:80%">
-                        {% for entry in regform.password.saved_error %}
-                            {{entry}}{{", " if not loop.last}}
+                <td> {% if regform.password.errors %}
+                    <ul class="errors">
+                        {% for error in regform.password.errors %}
+                            <li>{{ error }}</li>
                         {% endfor %}
-                    </span>
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>{{ regform.confirm.label }}*</td>
                 <td>{{ regform.confirm(class="css_class") }}</td>
-                <td>
-                    <span style="color:tomato; font-size:80%">
-                        {% for entry in regform.confirm.saved_error %}
-                            {{entry}}{{", " if not loop.last}}
+                <td> {% if regform.confirm.errors %}
+                    <ul class="errors">
+                        {% for error in regform.confirm.errors %}
+                            <li>{{ error }}</li>
                         {% endfor %}
-                    </span>
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>{{ regform.first_name.label }}*</td>
                 <td>{{ regform.first_name(class="css_class") }}</td>
-                <td>
-                    {% if 'first_name' in form_error %}
-                        <span style="color:tomato; font-size:80%">
-                            {% for entry in regform.first_name.saved_error %}
-                                {{entry}}{{", " if not loop.last}}
-                            {% endfor %}
-                        </span>
-                    {% endif %}
+                <td> {% if regform.first_name.errors %}
+                    <ul class="errors">
+                        {% for error in regform.first_name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>{{ regform.dob.label }}</td>
                 <td>{{ regform.dob(class="css_class") }} </td>
-                <td>
-                    {% if 'dob' in form_error %}
-                        <span style="color:tomato; font-size:80%">
-                            {% for entry in regform.dob.saved_error %}
-                                {{entry}}{{", " if not loop.last}}
-                            {% endfor %}
-                        </span>
-                    {% endif %}
+                <td> {% if regform.dob.errors %}
+                    <ul class="errors">
+                        {% for error in regform.dob.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>{{ regform.email.label }}*</td>
                 <td>{{ regform.email(class="css_class") }}</td>
-                <td>
-                    {% if 'email' in form_error %}
-                        <span style="color:tomato; font-size:80%">
-                            {% for entry in regform.email.label %}
-                                {{entry}}{{", " if not loop.last}}
-                            {% endfor %}
-                        </span>
-                    {% endif %}
+                <td> {% if regform.email.errors %}
+                    <ul class="errors">
+                        {% for error in regform.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 </td>
             </tr>
         </table>

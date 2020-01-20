@@ -15,7 +15,10 @@ authentication/models/exceptions.py
 authentication/templates/login.html
 authentication/templates/login_form.html
 authentication/templates/logout.html
+authentication/templates/logout_form.html
 authentication/templates/registration.html
+authentication/templates/registration_form.html
 authentication/templates/update_user.html
+authentication/templates/update_user_form.html
 authentication/views/__init__.py
 authentication/views/wtforms.py
