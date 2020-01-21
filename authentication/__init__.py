@@ -39,7 +39,7 @@ def login_required(func):
     @wraps(func)
     def wrapped(*args, **kwargs):
         if not request.user.is_authenticated():
-            r = make_response(redirect(url_for('login')))
+            r = make_response(redirect(url_for('.login')))
             r.delete_cookie('username')
             r.delete_cookie('first_name')
             flash('You are not logged in')
@@ -59,7 +59,7 @@ def inject_user():
 def login():
     if request.user.is_authenticated():
         flash('You are already logged in')
-        return redirect(url_for('logout'))
+        return redirect(url_for('.logout'))
 
     login_form = LoginForm(request.form)
     if request.method == 'GET':
@@ -82,7 +82,7 @@ def login():
     logger.info(f'Login: user password is {user.password}')
     logger.info(f'Login: password entered is {password}')
     if user.verify_password(password):
-        r = make_response(redirect(url_for('hello_world')))
+        r = make_response(redirect(url_for('welcome')))
         encrypted_username = crypting.aes_encrypt(username)
         if login_form.rememberme.data:
             r.set_cookie('username', encrypted_username,
@@ -107,7 +107,7 @@ def logout():
         return render_template('logout.html')
 
     else:
-        r = make_response(redirect(url_for('login')))
+        r = make_response(redirect(url_for('.login')))
         r.delete_cookie('username')
         r.delete_cookie('first_name')
         flash('Successfully logged out')
@@ -117,69 +117,59 @@ def logout():
 @auth.route('/registration', methods=['GET', 'POST'])
 def registration():
     if request.user.is_authenticated():
-        r = make_response(redirect(url_for('logout')))
+        r = make_response(redirect(url_for('.logout')))
         flash('You are already logged in! Do you want to logout?')
         return r
 
+    regform = RegistrationForm(request.form)
     if request.method == 'GET':
-        regform = RegistrationForm()
+        return render_template('registration.html', regform=regform)
+
+    elif not regform.validate():
+        flash('Error: incorrect entry in the form')
+        return render_template('registration.html', regform=regform)
+
+    elif User.exists(regform.username.data):
+        flash('This username is not available')
         return render_template('registration.html', regform=regform)
 
     else:
-        regform = RegistrationForm(request.form)
-        if not regform.validate():
-            flash('Error: incorrect entry in the form')
-            return render_template('registration.html', regform=regform)
-
-        if User.exists(regform.username.data):
-            flash('This username is not available')
-            return render_template('registration.html', regform=regform)
-
         User.create(username=regform.username.data,
                     password=regform.password.data,
                     first_name=regform.first_name.data,
                     dob=regform.dob.data,
                     email=regform.email.data)
         flash('Registration is successful! Please login.')
-        return redirect(url_for('login'))
+        return redirect(url_for('.login'))
 
 
 @auth.route('/update_user', methods=['GET', 'POST'])
 @login_required
 def update_user():
+    form = UpdateUserForm(request.form)
     if request.method == 'GET':
-        form = UpdateUserForm()
-        for attr in form.data.keys():
-            if attr in request.user.get_attributes():
-                cur_value = getattr(request.user, attr)
-                if cur_value != getattr(User, attr).default:
-                    getattr(form, attr).data = cur_value
-
+        for attr in request.user.get_attributes():
+            if not form.data.get(attr, 0):
+                form.data[attr] = getattr(request.user)
         return render_template('update_user.html', form=form)
-    else:
-        form = UpdateUserForm(request.form)
-        if not form.validate():
-            flash('Error: incorrect entry in the form')
-            r = make_response(redirect(url_for('update_user')))
-            r.set_cookie('form_error', json.dumps(form.errors))
-            return r
 
+    elif not form.validate():
+        flash('Error: incorrect entry in the form')
+        return render_template('update_user.html')
+
+    elif request.user.verify_password(form.cur_password.data):
         print(f'Data is {form.data}')
         print(f'Entered username is {form.username.data}')
         print(f'Entered password is {form.cur_password.data}')
-        if request.user.verify_password(form.cur_password.data):
-            data = dict()
-            for attr in form.get_attributes():
-                data[attr] = getattr(form, attr).data
-            request.user.update(**data)
+        request.user.update(**form.data)
 
-            encrypted_username = crypting.aes_encrypt(form.username.data)
-            r = make_response(redirect(url_for('blogpost_recent')))
-            r.set_cookie('username', encrypted_username)
-            r.set_cookie('first_name', form.first_name.data)
-            flash('You are successfully logged in!')
-            return r
-        else:
-            flash("Incorrect credentials: please double-check password")
-            return redirect(url_for('update_user'))
+        encrypted_username = crypting.aes_encrypt(form.username.data)
+        r = make_response(redirect(url_for('blogpost_recent')))
+        r.set_cookie('username', encrypted_username)
+        r.set_cookie('first_name', form.first_name.data)
+        flash('You are successfully logged in!')
+        return r
+    else:
+        flash("Incorrect credentials: please double-check password")
+        return redirect(url_for('.update_user'))
 

@@ -128,24 +128,13 @@ def logout_process():
 
 @auth.route('/registration', methods=['GET', 'POST'])
 def registration():
+    if request.user.is_authenticated():
+        flash('You are already logged in!')
+        return redirect(url_for('welcome'))
+
     if request.method == 'GET':
-        form_error = request.cookies.get('form_error')
-        try:
-            form_error = json.loads(form_error)
-        except TypeError or AttributeError:
-            form_error = dict()
-
-        if request.user.is_authenticated():
-            r = make_response(redirect(url_for('hello_world')))
-            r.delete_cookie('form_error')
-            flash('You are already logged in!')
-            return r
-
         regform = RegistrationForm()
-        for attr in regform.get_attributes():
-            getattr(regform, attr).saved_error = form_error.get(attr, [])
         r = make_response(render_template('registration.html', regform=regform))
-        r.delete_cookie('form_error')
         return r
 
 
