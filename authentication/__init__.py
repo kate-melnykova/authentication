@@ -146,14 +146,15 @@ def registration():
 @auth.route('/update_user', methods=['GET', 'POST'])
 @login_required
 def update_user():
-    form = UpdateUserForm(request.form)
     if request.method == 'GET':
-        for attr in request.user.get_attributes():
-            if not form.data.get(attr, 0):
-                form.data[attr] = getattr(request.user)
+        form = UpdateUserForm(username=request.user.username,
+                              dob=request.user.dob,
+                              first_name=request.user.first_name,
+                              email=request.user.email)
         return render_template('update_user.html', form=form)
 
-    elif not form.validate():
+    form = UpdateUserForm(request.form)
+    if not form.validate():
         flash('Error: incorrect entry in the form')
         return render_template('update_user.html')
 

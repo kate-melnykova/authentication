@@ -4,9 +4,9 @@ import json
 from passlib.hash import sha256_crypt
 from typing import Dict
 
-from models.basemodel import BaseModel, ValidationError
-from models.basemodel import TextField, DateField
-from models.db import db
+from authentication.models.basemodel import BaseModel, ValidationError
+from authentication.models.basemodel import TextField, DateField
+from authentication. models.db import db
 
 
 class User(BaseModel):

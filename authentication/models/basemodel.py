@@ -6,8 +6,8 @@ from typing import List
 from uuid import uuid4
 
 # from models.db import search
-from models.db import db
-from models.exceptions import NotFound, ValidationError
+from authentication.models.db import db
+from authentication.models.exceptions import NotFound, ValidationError
 
 
 class BaseField(ABC):

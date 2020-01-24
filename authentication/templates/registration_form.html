@@ -17,7 +17,13 @@
             </tr>
             <tr>
                 <td>{{ regform.password.label }}*</td>
-                <td>{{ regform.password(class="css_class") }}</td>
+                <td><span id="password">{{ regform.password(class="css_class") }}</span>
+                    <span onclick="password_visibility()">Show</span></td>
+                    <script>
+                        function password_visibility() {
+                          var x = document.getElementById("password");
+                        }
+                    </script>
                 <td> {% if regform.password.errors %}
                     <ul class="errors">
                         {% for error in regform.password.errors %}
