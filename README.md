@@ -52,11 +52,5 @@ Open the terminal and run
 $ export FLASK_APP=app.py
 $ flask run
 ```
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-
-
-## Getting started
+The server will run the app. Note that only pages 'login', '
+logout', 'register', and 'update_user' exist.
