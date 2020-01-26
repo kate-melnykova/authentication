@@ -2,6 +2,5 @@
 .idea
 .idea/
 /.idea/
-/dist/
 /build/
 /authentication.egg-info/
