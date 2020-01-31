@@ -1,7 +1,7 @@
 from setuptools import setup
 from setuptools import find_packages
 
-with open("README.md", "r+") as fh:
+with open("README.rst", "r+") as fh:
     long_description = fh.read()
 
 setup(
@@ -9,10 +9,10 @@ setup(
     version='1.0',
     packages=find_packages(),
     package_data={'authentication': ['templates/*']},
-    install_requires=['Flask >= 1.0', 'pycryptodome', 'wtforms', 'passlib'],
+    install_requires=['Flask >= 1.0', 'pycryptodome', 'wtforms', 'passlib', 'redis'],
     url='',
     license='MIT',
-    author='katyandrey',
+    author='Kateryna Melnykova',
     author_email='forkatemelnikova@gmail.com',
     description='Learning authentication'
 )

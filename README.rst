@@ -6,13 +6,9 @@ User can also update its profile. The data is stored on redis database.
 
 To install a package, open the terminal and download the GitHub repository:
 ```
-$ git clone https://github.com/kate-melnykova/authentication
+$  pip3 install --user git+https://github.com/kate-melnykova/authentication
 ```
-To install the package, run
-```
-$ pip install ./authentication/dist/authentication-1.0.tar.gz 
-```
-Please make sure that `Flask`, `pycryptodome`, `passlib`, `wtforms` is satisfied.
+The database for the package is redis, so please make sure that it is started prior to using the package.
 
 ## Getting started
 Create a python project with the following minimal structure
