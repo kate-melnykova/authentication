@@ -14,5 +14,6 @@ setup(
     license='MIT',
     author='Kateryna Melnykova',
     author_email='forkatemelnikova@gmail.com',
-    description='Learning authentication'
+    description='Learning authentication',
+    long_description=long_description
 )
