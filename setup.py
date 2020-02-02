@@ -6,7 +6,7 @@ with open("README.md", "r+") as fh:
 
 setup(
     name='authentication',
-    version='1.0',
+    version='1.0.0',
     packages=find_packages(),
     package_data={'authentication': ['templates/*']},
     install_requires=['Flask >= 1.0', 'pycryptodome', 'wtforms', 'passlib', 'redis'],
