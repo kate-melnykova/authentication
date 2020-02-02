@@ -12,7 +12,8 @@ from authentication.auth.models import User, AnonymousUser
 from authentication.views.wtforms import LoginForm, RegistrationForm, UpdateUserForm
 from authentication.models.exceptions import NotFound, ValidationError
 
-#__all__ = ['User', 'AnonymousUser', 'NotFound', 'ValidationError', 'auth', 'login_required']
+# __all__ = ['User', 'AnonymousUser', 'NotFound', 'ValidationError', 'auth', 'login_required']
+
 
 auth = Blueprint('auth', __name__, template_folder='templates')
 logger = getLogger(__name__)
