@@ -1,23 +1,22 @@
 import json
 
+from flask import current_app
 from redis import Redis, exceptions
 
-# redis = Redis.from_url(url=f'redis://redis:6379/0')
 
-# def search(key: str):
-#     return redis.scan_iter(match=key)
+url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
 
 
 class DB:
     def __init__(self):
-        self._redis = Redis.from_url(url=f'redis://redis:6379/0')
+        self._redis = Redis.from_url(url=url)
 
     @property
     def redis(self) -> 'Redis':
         try:
             self._redis.ping()
         except (exceptions.ConnectionError, exceptions.BusyLoadingError, ):
-            self._redis = Redis.from_url(url=f'redis://redis:6379/0')
+            self._redis = Redis.from_url(url=url)
 
         return self._redis
 
