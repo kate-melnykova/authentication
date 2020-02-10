@@ -123,17 +123,17 @@ class BaseModel(ABC):
         cls.validate(kwargs)
         attrs = {}
         for attribute in cls.get_attributes():
-            default = getattr(cls, attribute).default
-            if callable(default):
-                attrs[attribute] = default(kwargs)
-            else:
-                attrs[attribute] = default
+            attrs[attribute] = getattr(self, attribute)
         attrs.update(dict(kwargs))
         cls.clean(attrs)
         instance = cls(**attrs)
         # transfer some data from self
+        instance.username = self.username
         instance.id = self.id
         instance.date = self.date
+        if not kwargs['password']:
+            instance.password = self.password
+        print(f'Updated user is {instance}')
 
         self.delete(self.id)
         instance.save()

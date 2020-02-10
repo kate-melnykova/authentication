@@ -115,7 +115,7 @@ class AnonymousUser(User):
         return ['id', 'username', 'date']
 
     @classmethod
-    def load(cls, username:str) -> 'User':
+    def load(cls, username: str) -> 'User':
         return User.load(username)
 
     def save(self):

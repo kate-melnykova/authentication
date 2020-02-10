@@ -15,10 +15,6 @@ def no_special_symbols(form, field):
     if not all(char.isalnum() or char in [' ', ',', '.', '!', '?'] for char in field.data):
         raise ValidationError('Field has characters that are not allowed!')
 
-def no_quotes(form, field):
-    # TODO: ask Dmitriy
-    pass
-
 
 class LoginForm(Form):
     username = StringField('Username', [validators.Length(min=4, max=15), no_special_symbols])

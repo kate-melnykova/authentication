@@ -157,7 +157,7 @@ def update_user():
     form = UpdateUserForm(request.form)
     if not form.validate():
         flash('Error: incorrect entry in the form')
-        return render_template('update_user.html')
+        return render_template('update_user.html', form=form)
 
     elif request.user.verify_password(form.cur_password.data):
         print(f'Data is {form.data}')
@@ -166,7 +166,7 @@ def update_user():
         request.user.update(**form.data)
 
         encrypted_username = crypting.aes_encrypt(form.username.data)
-        r = make_response(redirect(url_for('blogpost_recent')))
+        r = make_response(redirect(url_for('index')))
         r.set_cookie('username', encrypted_username)
         r.set_cookie('first_name', form.first_name.data)
         flash('You are successfully logged in!')
