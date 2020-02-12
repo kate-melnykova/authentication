@@ -145,6 +145,7 @@ class BaseModel(ABC):
 
     @classmethod
     def _db_dict_to_instance(cls, data: bytearray):
+        print(data)
         data = json.loads(data)
         data_new = {}
         for k, v in data.items():

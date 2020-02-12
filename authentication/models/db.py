@@ -4,7 +4,9 @@ from flask import current_app
 from redis import Redis, exceptions
 
 
-url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
+# url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
+# TODO
+url = 'redis://redis:6379/0'
 
 
 class DB:

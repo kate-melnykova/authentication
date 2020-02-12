@@ -41,7 +41,7 @@ class User(BaseModel):
         :param password: password to be hashed
         :return: hashed password
         """
-        return sha256_crypt.encrypt(password)
+        return sha256_crypt.hash(password)
 
     def verify_password(self, password: str) -> bool:
         """
