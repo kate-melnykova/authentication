@@ -60,11 +60,17 @@ def test_load_user_form_db_returns_object_in_python_format(_):
 
     user = User.load(username='')
     assert isinstance(user.id, str), 'user.id is not a string'
+    assert user.id == 'user:username', 'user.id is decoded incorrectly'
     assert isinstance(user.password, str), 'user.password is not a string'
+    assert user.password == 'hashed_secret_password', 'user.password is decoded incorrectly'
     assert isinstance(user.first_name, str), 'user.first_name is not a string'
+    assert user.first_name == 'first name', 'user.first_name is decoded incorrectly'
     assert isinstance(user.dob, datetime), 'user.dob is not a datetime'
+    assert user.dob == datetime.fromtimestamp(600000000), 'user.dob is decoded incorrectly'
     assert isinstance(user.email, str), 'user.email is not a string'
+    assert user.email == 'fake_email@email.com', 'user.email is decoded incorrectly'
     assert isinstance(user.date, datetime), 'user.date is not a datetime'
+    assert user.date == datetime.fromtimestamp(1570000000), 'user.date is decoded incorrectly'
     assert isinstance(user.username, str), 'user.username is not a string'
 
 """
