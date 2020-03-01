@@ -48,8 +48,10 @@ db_sample_user = b'{"id": "user:username",' \
                  b' "first_name": "first name",' \
                  b' "dob": 600000000.0,' \
                  b' "email": "fake_email@email.com",' \
-                 b' "date": 1570000000,' \
-                 b' "username": "myusername"}'
+                 b' "reg_date": 1570000000,' \
+                 b' "username": "myusername",' \
+                 b' "last_update": 1570000000,' \
+                 b' "last_login": 1570000000}'
 
 
 #@patch('authentication.models.db.DB.load',
@@ -69,8 +71,8 @@ def test_load_user_form_db_returns_object_in_python_format(_):
     assert user.dob == datetime.fromtimestamp(600000000), 'user.dob is decoded incorrectly'
     assert isinstance(user.email, str), 'user.email is not a string'
     assert user.email == 'fake_email@email.com', 'user.email is decoded incorrectly'
-    assert isinstance(user.date, datetime), 'user.date is not a datetime'
-    assert user.date == datetime.fromtimestamp(1570000000), 'user.date is decoded incorrectly'
+    assert isinstance(user.reg_date, datetime), 'user.reg_date is not a datetime'
+    assert user.reg_date == datetime.fromtimestamp(1570000000), 'user.reg_date is decoded incorrectly'
     assert isinstance(user.username, str), 'user.username is not a string'
 
 """

@@ -34,6 +34,9 @@ def get_current_user():
                 request.user = User.load(username)
             except:  #NotFound
                 request.user = AnonymousUser()
+            else:
+                request.user.last_active = datetime.datetime.now()
+                request.user.save()
 
 
 def login_required(func):
@@ -95,6 +98,9 @@ def login():
             r.set_cookie('username', encrypted_username)
             r.set_cookie('first_name', user.first_name)
         flash('You are successfully logged in!')
+
+        user.last_login = datetime.now()
+        user.save()
         return r
     else:
         flash("Incorrect credentials: please double-check username and password")
@@ -163,6 +169,7 @@ def update_user():
         print(f'Data is {form.data}')
         print(f'Entered username is {form.username.data}')
         print(f'Entered password is {form.cur_password.data}')
+
         request.user.update(**form.data)
 
         encrypted_username = crypting.aes_encrypt(form.username.data)

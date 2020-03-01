@@ -22,7 +22,11 @@ class User(BaseModel):
     dob = DateField(name='dob', default='')
     email = TextField(name='email', default='')
     password = TextField(name='password', default='')
-    date = DateField(name='date', default=lambda kwargs: datetime.now())
+    reg_date = DateField(name='reg_date', default=lambda kwargs: datetime.now())
+    last_update = DateField(name='last_update', default=lambda kwargs: datetime.now())
+    last_login = DateField(name='last_login', default=lambda kwargs: datetime.now())
+    last_active = DateField(name='last_active', default=lambda kwargs: datetime.now())
+    photo = TextField(name='photo', default='')
 
     @staticmethod
     def _generate_id(**kwargs) -> str:

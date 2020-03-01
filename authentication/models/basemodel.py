@@ -1,8 +1,7 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 from datetime import datetime
 import json
-from time import mktime, time
-from typing import List
+from time import mktime
 from uuid import uuid4
 
 # from models.db import search
@@ -41,7 +40,6 @@ class TextField(BaseField):
 class DateField(BaseField):
     def to_db(self, instance):
         raw_value = self.__get__(instance)
-        print(f'insde to_db: raw_value={raw_value}, instance._date={instance._date}')
         if raw_value is '' or None:
             return ''
         else:
@@ -61,7 +59,7 @@ class BaseModel(ABC):
         return [attr for attr, value in cls.__dict__.items() if isinstance(value, BaseField)]
 
     id = TextField(name='id', default='')
-    date = DateField(name='date', default=lambda kwargs: datetime.now())
+    reg_date = DateField(name='reg_date', default=lambda kwargs: datetime.now())
 
     @staticmethod
     def _generate_id(**kwargs):
@@ -70,8 +68,14 @@ class BaseModel(ABC):
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             setattr(self, k, v)
+        if not hasattr(self, 'reg_date'):
+            self.reg_date = datetime.now()
+            self.last_update = datetime.now()
+            self.last_login = datetime.now()
+            self.last_active = datetime.now()
 
     def save(self):
+        self.last_update = datetime.now()
         d = dict()
         for attribute in self.get_attributes():
             d[attribute] = type(self).__dict__[attribute].to_db(self)
