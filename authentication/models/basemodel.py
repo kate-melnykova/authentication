@@ -134,7 +134,10 @@ class BaseModel(ABC):
         # transfer some data from self
         instance.username = self.username
         instance.id = self.id
-        instance.date = self.date
+        instance.reg_date = self.reg_date
+        instance.last_login = self.last_login
+        instance.last_active = datetime.now()
+        instance.last_update = datetime.now()
         if not kwargs['password']:
             instance.password = self.password
         print(f'Updated user is {instance}')

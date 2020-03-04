@@ -11,7 +11,8 @@ url = 'redis://redis:6379/0'
 
 class DB:
     def __init__(self):
-        self._redis = Redis.from_url(url=url)
+        self.url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
+        self._redis = Redis.from_url(url=self.url)
 
     @property
     def redis(self) -> 'Redis':
