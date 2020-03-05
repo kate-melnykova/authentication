@@ -1,17 +1,21 @@
 import json
 
-from flask import current_app
+import config
+
+# from flask import current_app
 from redis import Redis, exceptions
 
 
 # url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
 # TODO
-url = 'redis://redis:6379/0'
+# url = 'redis://redis:6379/0'
+url = config.get('REDIS_URL')
 
 
 class DB:
     def __init__(self):
-        self.url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
+        # self.url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
+        self.url = ...
         self._redis = Redis.from_url(url=self.url)
 
     @property
