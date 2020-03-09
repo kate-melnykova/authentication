@@ -6,7 +6,7 @@ from typing import Dict
 
 from authentication.models.basemodel import BaseModel, ValidationError
 from authentication.models.basemodel import TextField, DateField
-from authentication. models.db import db
+from authentication.models.db import db
 
 
 class User(BaseModel):

@@ -15,7 +15,7 @@ from authentication.models.exceptions import NotFound, ValidationError
 
 # __all__ = ['User', 'AnonymousUser', 'NotFound', 'ValidationError', 'auth', 'login_required']
 
-auth = init_auth_blueprint()
+auth = Blueprint('auth', __name__, template_folder='templates')
 logger = getLogger(__name__)
 
 
