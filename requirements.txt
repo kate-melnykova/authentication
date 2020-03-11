@@ -1,3 +1,4 @@
+pip
 Flask>=1.1.1
 WTForms>=2.2.1
 pycryptodome>=3.9.0
