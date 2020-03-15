@@ -1,11 +1,12 @@
-from collections import defaultdict
+import os
 from datetime import datetime
 from functools import wraps
 import json
 from logging import getLogger
 
 from flask import Blueprint, render_template, request, url_for,\
-    redirect, flash, make_response, current_app
+    redirect, flash, make_response
+from werkzeug.utils import secure_filename
 
 from authentication import init_auth_blueprint
 from authentication.auth import crypting
@@ -181,3 +182,28 @@ def update_user():
     else:
         flash("Incorrect credentials: please double-check password")
         return redirect(url_for('.update_user'))
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in auth.config['ALLOWED_PHOTO_EXTENSIONS']
+
+
+@auth.route('/update_user_photo', methods=['POST'])
+@login_required
+def update_user_photo():
+    # check if the post request has the file part
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(url_for('.update_user'))
+    file = request.files['file']
+    # if user does not select file, browser also
+    # submit an empty part without filename
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(url_for('.update_user'))
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(auth.config['UPLOAD_FOLDER'], filename))
+
+    return redirect(url_for('profile'))

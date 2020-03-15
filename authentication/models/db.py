@@ -7,7 +7,6 @@ from redis import Redis, exceptions
 class DB:
     def __init__(self, url=''):
         # self.url = current_app.config.get('REDIS_URL', f'redis://redis:6379/0')
-        print(f'Inside DB: redis_url is {url}')
         self.url = url
         self._redis = None
 

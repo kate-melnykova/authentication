@@ -9,7 +9,7 @@ setup(
     version='1.1.0',
     packages=find_packages(),
     package_data={'authentication': ['templates/*']},
-    install_requires='requirements.txt',
+    install_requires=['Flask >= 1.0', 'pycryptodome', 'wtforms', 'passlib', 'redis'],
     url='',
     license='MIT',
     author='Kateryna Melnykova',
