@@ -1,6 +1,7 @@
 from setuptools import setup
 from setuptools import find_packages
 from pip._internal.req import parse_requirements
+import pkg_resources
 
 with open("README.md", "r+") as fh:
     long_description = fh.read()
@@ -10,7 +11,7 @@ setup(
     version='1.1.0',
     packages=find_packages(),
     package_data={'authentication': ['templates/*']},
-    install_requires=parse_requirements('requirements.txt'),
+    install_requires=pkg_resources('requirements.txt'),
     url='',
     license='MIT',
     author='Kateryna Melnykova',
