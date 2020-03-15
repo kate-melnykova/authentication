@@ -5,7 +5,7 @@ import json
 from logging import getLogger
 
 from flask import Blueprint, render_template, request, url_for,\
-    redirect, flash, make_response
+    redirect, flash, make_response, current_app
 from werkzeug.utils import secure_filename
 
 from authentication import init_auth_blueprint
@@ -66,6 +66,7 @@ def login():
         flash('You are already logged in')
         return redirect(url_for('.logout'))
 
+    print(f'TESTING CURRENT_APP: {current_app.config["REDIS_URL"]}')
     login_form = LoginForm(request.form)
     if request.method == 'GET':
         return render_template('login.html', loginform=login_form)
