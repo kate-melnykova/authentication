@@ -26,6 +26,8 @@ class User(BaseModel):
     last_update = DateField(name='last_update', default=lambda kwargs: datetime.now())
     last_login = DateField(name='last_login', default=lambda kwargs: datetime.now())
     last_active = DateField(name='last_active', default=lambda kwargs: datetime.now())
+    removed = False
+    blocked = False
     photo = TextField(name='photo', default='')
 
     @staticmethod
