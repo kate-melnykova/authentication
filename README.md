@@ -1,4 +1,6 @@
 # Authentification blueprint package for flask
+[![Build Status](https://travis-ci.org/kate-melnykova/authentication.svg?branch=develop)](https://travis-ci.org/kate-melnykova/authentication)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Blueprint defines object User who can register, log in, and log out.
 User can also update its profile. The data is stored on redis database.
